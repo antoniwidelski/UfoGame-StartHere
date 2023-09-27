@@ -5,6 +5,8 @@
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 
+#include <vector>
+
 class Light : public Object
 {
 public:
@@ -19,7 +21,7 @@ public:
 protected:
 	glm::vec3 color;
 	GLfloat ambientIntensity;
-
 	GLfloat diffuseIntensity;
+
 };
 

@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <vector>
 
 #include <GL\glew.h>
 
@@ -17,14 +18,13 @@ public:
 
 	std::string ReadFile(const char* fileLocation);
 
-	GLuint GetProjectionLocation();
-	GLuint GetModelLocation();
-	GLuint GetViewLocation();
-	GLuint GetEyePositionLocation();
-	GLuint GetAmbientIntensityLocation();
-	GLuint GetAmbientColorLocation();
-	GLuint GetDiffuseIntensityLocation();
-	GLuint GetDirectionLocation();
+	GLuint GetProjectionLocation() { return uniformProjection; }
+	GLuint GetModelLocation() { return uniformModel; }
+	GLuint GetViewLocation() { return uniformView; }
+	GLuint GetEyePositionLocation() { return uniformEyePosition; }
+
+	void GetDirectionalLightLocation(std::vector<GLfloat>& uniforms);
+
 	GLuint GetSpecularIntensityLocation();
 	GLuint GetShininessLocation();
 
@@ -37,6 +37,13 @@ private:
 	GLuint shaderID, uniformProjection, uniformModel, uniformView, uniformEyePosition,
 		uniformAmbientIntensity, uniformAmbientColor, uniformDiffuseIntensity, uniformDirection,
 		uniformSpecularIntensity, uniformShininess;
+
+	struct {
+		GLuint uniformAmbientIntensity; 
+		GLuint uniformAmbientColor; 
+		GLuint uniformDiffuseIntensity;
+		GLuint uniformDirection;
+	} directionalLight;
 
 	void CompileShader(const char* vertexCode, const char* fragmentCode);
 	void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType);

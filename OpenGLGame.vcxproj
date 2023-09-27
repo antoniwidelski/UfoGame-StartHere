@@ -31,6 +31,7 @@
     <ClCompile Include="Source\Engine\Model.cpp" />
     <ClCompile Include="Source\Engine\Object.cpp" />
     <ClCompile Include="Source\Engine\Player.cpp" />
+    <ClCompile Include="Source\Engine\PointLight.cpp" />
     <ClCompile Include="Source\Engine\Scene.cpp" />
     <ClCompile Include="Source\Engine\Shader.cpp" />
     <ClCompile Include="Source\Engine\Texture.cpp" />
@@ -49,6 +50,7 @@
     <ClInclude Include="Source\Engine\Model.h" />
     <ClInclude Include="Source\Engine\Object.h" />
     <ClInclude Include="Source\Engine\Player.h" />
+    <ClInclude Include="Source\Engine\PointLight.h" />
     <ClInclude Include="Source\Engine\Scene.h" />
     <ClInclude Include="Source\Engine\Shader.h" />
     <ClInclude Include="Source\Engine\stb_image.h" />

@@ -4,9 +4,8 @@ class DirectionalLight :
     public Light
 {
 public:
-
 	DirectionalLight();
-	DirectionalLight(GLfloat red, GLfloat green, GLfloat blue, GLfloat aIntensity, GLfloat dIntensity, GLfloat xDir, GLfloat yDir, GLfloat zDir);
+	DirectionalLight(GLfloat red, GLfloat green, GLfloat blue, GLfloat aIntensity, GLfloat dIntensity);
 
 	void Update(GLfloat deltaTime);
 

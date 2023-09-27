@@ -84,53 +84,21 @@ void Shader::CompileShader(const char* vertexCode, const char* fragmentCode)
 	uniformView = glGetUniformLocation(shaderID, "view");
 	uniformEyePosition = glGetUniformLocation(shaderID, "eyePosition");
 
-	uniformAmbientIntensity = glGetUniformLocation(shaderID, "directionalLight.ambientIntensity");
-	uniformAmbientColor = glGetUniformLocation(shaderID, "directionalLight.color");
-	uniformDiffuseIntensity = glGetUniformLocation(shaderID, "directionalLight.diffuseIntensity");
-	uniformDirection = glGetUniformLocation(shaderID, "directionalLight.direction");
+	directionalLight.uniformAmbientIntensity = glGetUniformLocation(shaderID, "directionalLight.ambientIntensity");
+	directionalLight.uniformAmbientColor = glGetUniformLocation(shaderID, "directionalLight.color");
+	directionalLight.uniformDiffuseIntensity = glGetUniformLocation(shaderID, "directionalLight.diffuseIntensity");
+	directionalLight.uniformDirection = glGetUniformLocation(shaderID, "directionalLight.direction");
 
 	uniformSpecularIntensity = glGetUniformLocation(shaderID, "material.specularIntensity");
 	uniformShininess = glGetUniformLocation(shaderID, "material.shininess");
 }
 
-GLuint Shader::GetProjectionLocation()
+void Shader::GetDirectionalLightLocation(std::vector<GLfloat>& uniforms)
 {
-	return uniformProjection;
-}
-
-GLuint Shader::GetModelLocation()
-{
-	return uniformModel;
-}
-
-GLuint Shader::GetViewLocation()
-{
-	return uniformView;
-}
-
-GLuint Shader::GetEyePositionLocation()
-{
-	return uniformEyePosition;
-}
-
-GLuint Shader::GetAmbientIntensityLocation()
-{
-	return uniformAmbientIntensity;
-}
-
-GLuint Shader::GetAmbientColorLocation()
-{
-	return uniformAmbientColor;
-}
-
-GLuint Shader::GetDiffuseIntensityLocation()
-{
-	return uniformDiffuseIntensity;
-}
-
-GLuint Shader::GetDirectionLocation()
-{
-	return uniformDirection;
+	uniforms.push_back(directionalLight.uniformAmbientIntensity);
+	uniforms.push_back(directionalLight.uniformAmbientColor);
+	uniforms.push_back(directionalLight.uniformDiffuseIntensity);
+	uniforms.push_back(directionalLight.uniformDirection);
 }
 
 GLuint Shader::GetSpecularIntensityLocation()

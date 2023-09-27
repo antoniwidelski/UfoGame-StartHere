@@ -2,19 +2,22 @@
 
 DirectionalLight::DirectionalLight() : Light()
 {
-	direction = glm::vec3(0.0f, 1.0f, 0.0f);
+	SetRotation(0.0f, 1.0f, 0.0f);
 }
 
-DirectionalLight::DirectionalLight(GLfloat red, GLfloat green, GLfloat blue, GLfloat aIntensity, GLfloat dIntensity, GLfloat xDir, GLfloat yDir, GLfloat zDir) : Light(red, green, blue, aIntensity, dIntensity)
+DirectionalLight::DirectionalLight(GLfloat red, GLfloat green, GLfloat blue, GLfloat aIntensity, GLfloat dIntensity) : Light(red, green, blue, aIntensity, dIntensity)
 {
-	direction = glm::vec3(xDir, yDir, zDir);
+	SetRotation(0.0f, 1.0f, 0.0f);
 }
 
 void DirectionalLight::Update(GLfloat deltaTime)
 {
 	Object::Update(deltaTime);
 
-	UseLight(shader->GetAmbientIntensityLocation(), shader->GetAmbientColorLocation(), shader->GetDiffuseIntensityLocation(), shader->GetDirectionLocation());
+	std::vector<GLfloat> uniforms;
+	shader->GetDirectionalLightLocation(uniforms);
+
+	UseLight(uniforms[0], uniforms[1], uniforms[2], uniforms[3]);
 }
 
 void DirectionalLight::UseLight(GLfloat ambientIntensityLocation, GLfloat ambientColorLocation,
@@ -22,9 +25,9 @@ void DirectionalLight::UseLight(GLfloat ambientIntensityLocation, GLfloat ambien
 {
 	glUniform3f(ambientColorLocation, color.x, color.y, color.z);
 	glUniform1f(ambientIntensityLocation, ambientIntensity);
-
 	glUniform1f(diffuseInstensityLocation, diffuseIntensity);
-	glUniform3f(directionLocation, direction.x, direction.y, direction.z);
+
+	glUniform3f(directionLocation, rotation.x, rotation.y, rotation.z);
 }
 
 DirectionalLight::~DirectionalLight()
