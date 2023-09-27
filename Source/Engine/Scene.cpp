@@ -4,6 +4,7 @@
 #include "Frog.h"
 #include "DirectionalLight.h"
 #include "PointLight.h"
+#include "SpotLight.h"
 #include "Material.h"
 
 Scene::Scene(Shader* shader)
@@ -49,9 +50,14 @@ void Scene::CreateScene()
 	mainLight->SetRotation(2.0f, -1.0f, -2.0f);
 	AddObject(mainLight);
 
-	PointLight* pLight = new PointLight(1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f);
-	pLight->SetPosition(0.0f, 1.0f, -3.0f);
+	PointLight* pLight = new PointLight(1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.3f, 0.2f, 0.1f);
+	pLight->SetPosition(0.0f, 1.0f, -7.0f);
 	AddObject(pLight);
+
+	SpotLight* sLight = new SpotLight(0.0f, 1.0f, 0.0f, 0.3f, 1.0f, 0.2f, 0.1f, 0.3f, 20.0);
+	sLight->SetPosition(0.0f, 1.0f, 0.0f);
+	sLight->SetRotation(0.0f, 1.0f, 0.0f);
+	AddObject(sLight);
 }
 
 void Scene::Update(GLfloat deltaTime, bool* keys)

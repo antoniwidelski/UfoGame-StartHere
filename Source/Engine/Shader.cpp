@@ -97,6 +97,14 @@ void Shader::CompileShader(const char* vertexCode, const char* fragmentCode)
 	pointLight.uniformDiffuseIntensity = glGetUniformLocation(shaderID, "pointLight.base.diffuseIntensity");
 	pointLight.uniformPosition = glGetUniformLocation(shaderID, "pointLight.position");
 	pointLight.uniformAttenuationVars = glGetUniformLocation(shaderID, "pointLight.attenuationVars");
+
+	spotLight.uniformAmbientIntensity = glGetUniformLocation(shaderID, "spotLight.base.base.ambientIntensity");
+	spotLight.uniformAmbientColor = glGetUniformLocation(shaderID, "spotLight.base.base.color");
+	spotLight.uniformDiffuseIntensity = glGetUniformLocation(shaderID, "spotLight.base.base.diffuseIntensity");
+	spotLight.uniformPosition = glGetUniformLocation(shaderID, "spotLight.base.position");
+	spotLight.uniformAttenuationVars = glGetUniformLocation(shaderID, "spotLight.base.attenuationVars");
+	spotLight.uniformDirection = glGetUniformLocation(shaderID, "spotLight.direction");
+	spotLight.uniformEdge = glGetUniformLocation(shaderID, "spotLight.edge");
 }
 
 void Shader::GetDirectionalLightLocation(std::vector<GLfloat>& uniforms)
@@ -114,6 +122,17 @@ void Shader::GetPointLightLocation(std::vector<GLfloat>& uniforms)
 	uniforms.push_back(pointLight.uniformDiffuseIntensity);
 	uniforms.push_back(pointLight.uniformPosition);
 	uniforms.push_back(pointLight.uniformAttenuationVars);
+}
+
+void Shader::GetSpotLightLocation(std::vector<GLfloat>& uniforms)
+{
+	uniforms.push_back(spotLight.uniformAmbientIntensity);
+	uniforms.push_back(spotLight.uniformAmbientColor);
+	uniforms.push_back(spotLight.uniformDiffuseIntensity);
+	uniforms.push_back(spotLight.uniformPosition);
+	uniforms.push_back(spotLight.uniformDirection);
+	uniforms.push_back(spotLight.uniformAttenuationVars);
+	uniforms.push_back(spotLight.uniformEdge);
 }
 
 GLuint Shader::GetSpecularIntensityLocation()

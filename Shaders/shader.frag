@@ -27,6 +27,14 @@ struct PointLight
 	vec3 attenuationVars;
 };
 
+struct SpotLight 
+{
+	PointLight base;
+	vec3 direction;
+	float edge;
+};
+
+
 struct Material
 {
 	float specularIntensity;
@@ -35,6 +43,7 @@ struct Material
 
 uniform DirectionalLight directionalLight;
 uniform PointLight pointLight;
+uniform SpotLight spotLight;
 
 uniform sampler2D theTexture;
 uniform Material material;
@@ -66,17 +75,17 @@ vec4 CalcLightByDirection(Light light, vec3 direction)
 	return (ambientColor + diffuseColor + specularColor);
 }
 
-vec4 CalcPointLight()
+vec4 CalcPointLight(PointLight pLight)
 {
-	vec3 direction = FragPos - pointLight.position;
+	vec3 direction = FragPos - pLight.position;
 	float distance = length(direction);
 	direction = normalize(direction);
 		
-	vec4 color = CalcLightByDirection(pointLight.base, direction);
+	vec4 color = CalcLightByDirection(pLight.base, direction);
 	
-	float attenuation = pointLight.attenuationVars.x * distance * distance +
-						pointLight.attenuationVars.y * distance +
-						pointLight.attenuationVars.z;
+	float attenuation = pLight.attenuationVars.x * distance * distance +
+						pLight.attenuationVars.y * distance +
+						pLight.attenuationVars.z;
 	
 	if(attenuation == 0)
 	{
@@ -86,10 +95,28 @@ vec4 CalcPointLight()
 	return (color / attenuation);
 }
 
+vec4 CalcSpotLight(SpotLight sLight)
+{
+	vec3 rayDirection = normalize(FragPos - sLight.base.position);
+	float slFactor = dot(rayDirection, sLight.direction);
+	
+	if(slFactor < sLight.edge)
+	{
+		vec4 color = CalcPointLight(sLight.base);
+		
+		return color;
+	}
+	else
+	{
+	  return vec4(0, 0, 0, 0);
+	}
+}
+
 void main()
 {
 	vec4 finalColor = CalcLightByDirection(directionalLight.base, directionalLight.direction);
-	finalColor += CalcPointLight();
+	finalColor += CalcPointLight(pointLight);
+	finalColor += CalcSpotLight(spotLight);
 	
 	color = texture(theTexture, TexCoord) * finalColor;
 }
