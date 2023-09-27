@@ -34,6 +34,7 @@
     <ClCompile Include="Source\Engine\PointLight.cpp" />
     <ClCompile Include="Source\Engine\Scene.cpp" />
     <ClCompile Include="Source\Engine\Shader.cpp" />
+    <ClCompile Include="Source\Engine\SpotLight.cpp" />
     <ClCompile Include="Source\Engine\Texture.cpp" />
     <ClCompile Include="Source\Engine\Window.cpp" />
   </ItemGroup>
@@ -53,6 +54,7 @@
     <ClInclude Include="Source\Engine\PointLight.h" />
     <ClInclude Include="Source\Engine\Scene.h" />
     <ClInclude Include="Source\Engine\Shader.h" />
+    <ClInclude Include="Source\Engine\SpotLight.h" />
     <ClInclude Include="Source\Engine\stb_image.h" />
     <ClInclude Include="Source\Engine\Texture.h" />
     <ClInclude Include="Source\Engine\Window.h" />

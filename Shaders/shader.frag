@@ -33,33 +33,63 @@ struct Material
 	float shininess;
 };
 
-uniform sampler2D theTexture;
 uniform DirectionalLight directionalLight;
+uniform PointLight pointLight;
+
+uniform sampler2D theTexture;
 uniform Material material;
 
 uniform vec3 eyePosition;
 
-void main()
+vec4 CalcLightByDirection(Light light, vec3 direction)
 {
-	vec4 ambientColor = vec4(directionalLight.base.color, 1.0) * directionalLight.base.ambientIntensity;
-
-	float diffuseFactor = max(dot(normalize(Normal), normalize(directionalLight.direction)), 0.0f);
-	vec4 diffuseColor = vec4(directionalLight.base.color, 1.0f) * directionalLight.base.diffuseIntensity * diffuseFactor;
+	vec4 ambientColor = vec4(light.color, 1.0f) * light.ambientIntensity;
+	
+	float diffuseFactor = max(dot(normalize(Normal), normalize(direction)), 0.0f);
+	vec4 diffuseColor = vec4(light.color * light.diffuseIntensity * diffuseFactor, 1.0f);
 	
 	vec4 specularColor = vec4(0, 0, 0, 0);
 	
-	if(diffuseFactor > 0.0)
+	if(diffuseFactor > 0.0f)
 	{
 		vec3 fragToEye = normalize(eyePosition - FragPos);
-		vec3 reflectedVertex = normalize(reflect(directionalLight.direction, normalize(Normal)));
+		vec3 reflectedVertex = normalize(reflect(direction, normalize(Normal)));
 		
 		float specularFactor = dot(fragToEye, reflectedVertex);
 		if(specularFactor > 0.0f)
 		{
 			specularFactor = pow(specularFactor, material.shininess);
-			specularColor  = vec4(directionalLight.base.color * material.specularIntensity * specularFactor, 1.0);
+			specularColor = vec4(light.color * material.specularIntensity * specularFactor, 1.0f);
 		}
 	}
+
+	return (ambientColor + diffuseColor + specularColor);
+}
+
+vec4 CalcPointLight()
+{
+	vec3 direction = FragPos - pointLight.position;
+	float distance = length(direction);
+	direction = normalize(direction);
+		
+	vec4 color = CalcLightByDirection(pointLight.base, direction);
 	
-	color = texture(theTexture, TexCoord) * (ambientColor + diffuseColor + specularColor);
+	float attenuation = pointLight.attenuationVars.x * distance * distance +
+						pointLight.attenuationVars.y * distance +
+						pointLight.attenuationVars.z;
+	
+	if(attenuation == 0)
+	{
+		return vec4(0, 0, 0, 0);
+	}
+	
+	return (color / attenuation);
+}
+
+void main()
+{
+	vec4 finalColor = CalcLightByDirection(directionalLight.base, directionalLight.direction);
+	finalColor += CalcPointLight();
+	
+	color = texture(theTexture, TexCoord) * finalColor;
 }

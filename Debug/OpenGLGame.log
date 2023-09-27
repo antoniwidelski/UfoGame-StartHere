@@ -1,54 +1,6 @@
-﻿  PointLight.cpp
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\PointLight.cpp(26,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\PointLight.cpp(27,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\PointLight.cpp(28,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\PointLight.cpp(30,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\PointLight.cpp(31,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
-  Shader.cpp
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Shader.cpp(104,37): warning C4244: 'argument': conversion from 'GLuint' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=GLfloat
-          ]
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Shader.cpp(105,37): warning C4244: 'argument': conversion from 'GLuint' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=GLfloat
-          ]
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Shader.cpp(106,37): warning C4244: 'argument': conversion from 'GLuint' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=GLfloat
-          ]
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Shader.cpp(107,37): warning C4244: 'argument': conversion from 'GLuint' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=GLfloat
-          ]
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Shader.cpp(112,31): warning C4244: 'argument': conversion from 'GLuint' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=GLfloat
-          ]
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Shader.cpp(113,31): warning C4244: 'argument': conversion from 'GLuint' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=GLfloat
-          ]
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Shader.cpp(114,31): warning C4244: 'argument': conversion from 'GLuint' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=GLfloat
-          ]
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Shader.cpp(115,31): warning C4244: 'argument': conversion from 'GLuint' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=GLfloat
-          ]
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Shader.cpp(116,31): warning C4244: 'argument': conversion from 'GLuint' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=GLfloat
-          ]
+﻿  Scene.cpp
+D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Scene.cpp(117,31): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+  SpotLight.cpp
   Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   OpenGLGame.vcxproj -> D:\OpenGL\Projects\OpenGLGame\Debug\OpenGLGame.exe
