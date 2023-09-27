@@ -24,6 +24,7 @@ public:
 	GLuint GetEyePositionLocation() { return uniformEyePosition; }
 
 	void GetDirectionalLightLocation(std::vector<GLfloat>& uniforms);
+	void GetPointLightLocation(std::vector<GLfloat>& uniforms);
 
 	GLuint GetSpecularIntensityLocation();
 	GLuint GetShininessLocation();
@@ -44,6 +45,14 @@ private:
 		GLuint uniformDiffuseIntensity;
 		GLuint uniformDirection;
 	} directionalLight;
+
+	struct {
+		GLuint uniformAmbientIntensity;
+		GLuint uniformAmbientColor;
+		GLuint uniformDiffuseIntensity;
+		GLuint uniformPosition;
+		GLuint uniformAttenuationVars;
+	} pointLight;
 
 	void CompileShader(const char* vertexCode, const char* fragmentCode);
 	void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType);

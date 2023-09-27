@@ -14,7 +14,10 @@ void PointLight::Update(GLfloat deltaTime)
 {
 	Object::Update(deltaTime);
 
-	//UseLight(shader->GetAmbientIntensityLocation(), shader->GetAmbientColorLocation(), shader->GetDiffuseIntensityLocation(), shader->GetPositionLocation(), shader->GetAttenuationVarsLocation());
+	std::vector<GLfloat> uniforms;
+	shader->GetPointLightLocation(uniforms);
+
+	UseLight(uniforms[0], uniforms[1], uniforms[2], uniforms[3], uniforms[4]);
 }
 
 void PointLight::UseLight(GLfloat ambientIntensityLocation, GLfloat ambientColorLocation,

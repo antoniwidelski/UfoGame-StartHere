@@ -84,13 +84,19 @@ void Shader::CompileShader(const char* vertexCode, const char* fragmentCode)
 	uniformView = glGetUniformLocation(shaderID, "view");
 	uniformEyePosition = glGetUniformLocation(shaderID, "eyePosition");
 
-	directionalLight.uniformAmbientIntensity = glGetUniformLocation(shaderID, "directionalLight.ambientIntensity");
-	directionalLight.uniformAmbientColor = glGetUniformLocation(shaderID, "directionalLight.color");
-	directionalLight.uniformDiffuseIntensity = glGetUniformLocation(shaderID, "directionalLight.diffuseIntensity");
+	directionalLight.uniformAmbientIntensity = glGetUniformLocation(shaderID, "directionalLight.base.ambientIntensity");
+	directionalLight.uniformAmbientColor = glGetUniformLocation(shaderID, "directionalLight.base.color");
+	directionalLight.uniformDiffuseIntensity = glGetUniformLocation(shaderID, "directionalLight.base.diffuseIntensity");
 	directionalLight.uniformDirection = glGetUniformLocation(shaderID, "directionalLight.direction");
 
 	uniformSpecularIntensity = glGetUniformLocation(shaderID, "material.specularIntensity");
 	uniformShininess = glGetUniformLocation(shaderID, "material.shininess");
+
+	pointLight.uniformAmbientIntensity = glGetUniformLocation(shaderID, "pointLight.base.ambientIntensity");
+	pointLight.uniformAmbientColor = glGetUniformLocation(shaderID, "pointLight.base.color");
+	pointLight.uniformDiffuseIntensity = glGetUniformLocation(shaderID, "pointLight.base.diffuseIntensity");
+	pointLight.uniformPosition = glGetUniformLocation(shaderID, "pointLight.position");
+	pointLight.uniformAttenuationVars = glGetUniformLocation(shaderID, "pointLight.attenuationVars");
 }
 
 void Shader::GetDirectionalLightLocation(std::vector<GLfloat>& uniforms)
@@ -99,6 +105,15 @@ void Shader::GetDirectionalLightLocation(std::vector<GLfloat>& uniforms)
 	uniforms.push_back(directionalLight.uniformAmbientColor);
 	uniforms.push_back(directionalLight.uniformDiffuseIntensity);
 	uniforms.push_back(directionalLight.uniformDirection);
+}
+
+void Shader::GetPointLightLocation(std::vector<GLfloat>& uniforms)
+{
+	uniforms.push_back(pointLight.uniformAmbientIntensity);
+	uniforms.push_back(pointLight.uniformAmbientColor);
+	uniforms.push_back(pointLight.uniformDiffuseIntensity);
+	uniforms.push_back(pointLight.uniformPosition);
+	uniforms.push_back(pointLight.uniformAttenuationVars);
 }
 
 GLuint Shader::GetSpecularIntensityLocation()
