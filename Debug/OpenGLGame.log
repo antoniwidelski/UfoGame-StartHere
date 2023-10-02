@@ -1,3 +1,15 @@
-﻿  Scene.cpp
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Scene.cpp(152,31): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+﻿  main.cpp
+D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Window.h(17,36): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Window.h(18,37): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+  Scene.cpp
+D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Scene.cpp(151,31): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+  SpotLight.cpp
+D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\SpotLight.cpp(31,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\SpotLight.cpp(32,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\SpotLight.cpp(33,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\SpotLight.cpp(35,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\SpotLight.cpp(36,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\SpotLight.cpp(38,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\SpotLight.cpp(39,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+  Generating Code...
   OpenGLGame.vcxproj -> D:\OpenGL\Projects\OpenGLGame\Debug\OpenGLGame.exe

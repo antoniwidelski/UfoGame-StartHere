@@ -30,7 +30,6 @@ Window::Window(GLint windowWidth, GLint windowHeight)
 
 int Window::Initialise()
 {
-	// Initialise GLFW
 	if (!glfwInit())
 	{
 		printf("GLFW Initialisation failed!");
@@ -38,13 +37,9 @@ int Window::Initialise()
 		return 1;
 	}
 
-	// Setup GLFW widndow properties
-	// OpenGL version
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	// Core profile = No Backwards Compatibility
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	// Allow forward compatibility
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
 	mainWindow = glfwCreateWindow(width, height, "Test Window", NULL, NULL);
@@ -55,17 +50,13 @@ int Window::Initialise()
 		return 1;
 	}
 
-	// Get Buffer size information
 	glfwGetFramebufferSize(mainWindow, &bufferWidth, &bufferHeight);
 
-	// Set context for GLEW to use
 	glfwMakeContextCurrent(mainWindow);
 
-	// Handle Key + Mouse Input
 	createCallbacks();
 	glfwSetInputMode(mainWindow, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
-	// Allow modern extensions features
 	glewExperimental = GL_TRUE;
 
 	if (glewInit() != GLEW_OK)
@@ -78,7 +69,6 @@ int Window::Initialise()
 
 	glEnable(GL_DEPTH_TEST);
 
-	//Setup Viewport size
 	glViewport(0, 0, bufferWidth, bufferHeight);
 
 	glfwSetWindowUserPointer(mainWindow, this);

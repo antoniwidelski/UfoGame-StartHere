@@ -45,10 +45,6 @@ void Engine::Initialise()
 	camera = Camera(glm::vec3(0.0f, 30.0f, 40.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, -39.0f, 5.0f, 0.5f);
 
 	projection = glm::perspective(45.0f, mainWindow.getBufferWidth() / mainWindow.getBufferHeight(), 0.1f, 1000.0f);
-	//projection = glm::ortho(-(mainWindow.getBufferWidth() / 4.0f), mainWindow.getBufferWidth() / 4.0f,
-	//	mainWindow.getBufferHeight() / 4.0f, -(mainWindow.getBufferHeight() / 4.0f),
-	//	-1000.0f, 1000.0f);
-	//view = glm::lookAt(glm::vec3(0.0f, 0.0f, 1.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0, 1, 0));
 }
 
 void Engine::Loop()
@@ -57,13 +53,11 @@ void Engine::Loop()
 	deltaTime = now - lastTime;
 	lastTime = now;
 
-	// Get + Handle user input events
 	glfwPollEvents();
 
 	camera.keyControl(mainWindow.getKeys(), deltaTime);
 	camera.mouseControl(mainWindow.getXChange(), mainWindow.getYChange());
 
-	// Clear window
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 

@@ -12,7 +12,6 @@ SpotLight::SpotLight() : PointLight()
 
 SpotLight::SpotLight(GLfloat red, GLfloat green, GLfloat blue, GLfloat aIntensity, GLfloat dIntensity, GLfloat exp, GLfloat lin, GLfloat con, GLfloat edg) : PointLight(red, green, blue, aIntensity, dIntensity, exp, lin, con)
 {
-	//srand(time(NULL));
 	edge = edg;
 	procEdge = cosf(glm::radians(edge));
 }
@@ -25,9 +24,6 @@ void SpotLight::Update(GLfloat deltaTime)
 	shader->GetSpotLightLocation(uniforms);
 
 	UseLight(uniforms[0], uniforms[1], uniforms[2], uniforms[3], uniforms[4], uniforms[5], uniforms[6]);
-
-	//srand(time(NULL));
-	//SetRotation((float)rand() / 30000, (float)rand() / 30000, (float)rand() / 30000);
 }
 
 void SpotLight::UseLight(GLfloat ambientIntensityLocation, GLfloat ambientColorLocation, GLfloat diffuseInstensityLocation, GLfloat positionLocation, GLfloat directionLocation, GLfloat attenuationVarsLocation, GLfloat edgeLocation)

@@ -1,5 +1,3 @@
-//Object is 
-
 #pragma once
 
 #include <string>

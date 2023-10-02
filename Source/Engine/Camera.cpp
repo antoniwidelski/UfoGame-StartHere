@@ -39,8 +39,6 @@ void Camera::keyControl(bool* keys, GLfloat deltaTime)
 	{
 		position += right * velocity;
 	}
-
-	//printf("%f, %f, %f\n", position.x, position.y, position.z);
 }
 
 void Camera::mouseControl(GLfloat xChange, GLfloat yChange)
@@ -60,8 +58,6 @@ void Camera::mouseControl(GLfloat xChange, GLfloat yChange)
 	{
 		pitch = -90.0f;
 	}
-
-	//printf("%f, %f\n", yaw, pitch);
 
 	update();
 }

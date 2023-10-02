@@ -67,7 +67,6 @@ void Scene::CreateScene()
 
 	PointLight* pLight = new PointLight(1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.3f, 0.2f, 0.1f);
 	pLight->SetPosition(0.0f, 1.0f, -7.0f);
-	//AddObject(pLight);
 
 	SpotLight* sLight = new SpotLight(0.3f, 1.0f, 0.3f, 0.3f, 2.0f, 0.05f, 0.1f, 0.1f, 100.0);
 	sLight->SetPosition(0.0f, 1.0f, 0.0f);
@@ -157,8 +156,6 @@ std::vector<Object*>* Scene::GetObjectsUnderObject(Object* highObject, GLfloat r
 			}
 		}
 	}
-
-	//printf("size of objecst %i\n", returnObjects->size());
 
 	return returnObjects;
 }
