@@ -3,6 +3,8 @@
 #include "Actor.h"
 #include "Model.h"
 #include "Shader.h"
+#include "Frog.h"
+#include "SpotLight.h"
 
 #include <GLFW/glfw3.h>
 
@@ -25,8 +27,13 @@ private:
 
     std::vector<Object*>* objectsUnder;
 
-    void CatchFrog();
+    Frog* frogUnder;
+    Frog* CheckForFrog();
+
+    bool isCapturing;
 
     GLfloat dTime;
-};
 
+    SpotLight* ufoLight;
+    SpotLight* GetUfoLight();
+};

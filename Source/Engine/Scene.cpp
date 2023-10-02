@@ -29,49 +29,78 @@ void Scene::CreateScene()
 	Actor* floor = new Actor();
 	floor->Create(modelList[floorModelID]);
 	floor->Scale(30.0f, 30.0f, 30.0f);
-	floor->SetMaterial(shinyMaterial);
 	AddObject(floor);
 
 	Player* player = new Player();
 	player->Create(5.0f, modelList[ufoModelID]);
 	player->SetMaterial(shinyMaterial);
 	player->Move(0.0f, 7.0f, 0.0f);
-	//player->Scale(2.0f, 2.0f, 2.0f);
 	AddObject(player);
 
 	Frog* frog = new Frog();
 	frog->Create(modelList[frogModelID]);
+	frog->Move(13.0f, 0.0f, 3.0f);
 	frog->Scale(0.5f, 0.5f, 0.5f);
-	frog->Rotate(-90.0f, 0.0f, 90.0f);
+	frog->Rotate(-90.0f, 0.0f, -90.0f);
 	frog->SetMaterial(shinyMaterial);
 	AddObject(frog);
 
-	DirectionalLight* mainLight = new DirectionalLight(1.0f, 1.0f, 1.0f, 0.3f, 1.0f);
+	Frog* frog2 = new Frog();
+	frog2->Create(modelList[frogModelID]);
+	frog2->Move(-14.0f, 0.0f, -6.0f);
+	frog2->Scale(0.5f, 0.5f, 0.5f);
+	frog2->Rotate(-90.0f, 0.0f, -90.0f);
+	frog2->SetMaterial(shinyMaterial);
+	AddObject(frog2);
+
+	Frog* frog3 = new Frog();
+	frog3->Create(modelList[frogModelID]);
+	frog3->Move(0.0f, 0.0f, 20.0f);
+	frog3->Scale(0.5f, 0.5f, 0.5f);
+	frog3->Rotate(-90.0f, 0.0f, -90.0f);
+	frog3->SetMaterial(shinyMaterial);
+	AddObject(frog3);
+
+	DirectionalLight* mainLight = new DirectionalLight(1.0f, 1.0f, 1.0f, 0.1f, 0.3f);
 	mainLight->SetRotation(2.0f, -1.0f, -2.0f);
 	AddObject(mainLight);
 
 	PointLight* pLight = new PointLight(1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.3f, 0.2f, 0.1f);
 	pLight->SetPosition(0.0f, 1.0f, -7.0f);
-	AddObject(pLight);
+	//AddObject(pLight);
 
-	SpotLight* sLight = new SpotLight(0.0f, 1.0f, 0.0f, 0.3f, 1.0f, 0.2f, 0.1f, 0.3f, 20.0);
+	SpotLight* sLight = new SpotLight(0.3f, 1.0f, 0.3f, 0.3f, 2.0f, 0.05f, 0.1f, 0.1f, 100.0);
 	sLight->SetPosition(0.0f, 1.0f, 0.0f);
 	sLight->SetRotation(0.0f, 1.0f, 0.0f);
+	player->AttachObject(sLight);
+	sLight->SetColor(1.0f, 0.0f, 0.0f);
 	AddObject(sLight);
 }
 
 void Scene::Update(GLfloat deltaTime, bool* keys)
 {
+	std::vector<int> removeIDs;
 	for (size_t i = 0; i < objectList.size(); i++)
 	{
-		if (Player* posPlayer = dynamic_cast<Player*>(objectList[i]))
+		if (objectList[i]->shouldRemove)
 		{
-			posPlayer->SetObjectsUnderPlayer(GetObjectsUnderObject(posPlayer, 3.0f));
-			posPlayer->Update(deltaTime, keys);
+			removeIDs.push_back(i);
 		}
 		else
 		{
-			objectList[i]->Update(deltaTime);
+			if (Player* posPlayer = dynamic_cast<Player*>(objectList[i]))
+			{
+				posPlayer->SetObjectsUnderPlayer(GetObjectsUnderObject(posPlayer, 3.0f));
+				posPlayer->Update(deltaTime, keys);
+			}
+			else
+			{
+				objectList[i]->Update(deltaTime);
+			}
+		}
+		for (size_t i = 0; i < removeIDs.size(); i++)
+		{
+			objectList.erase(objectList.begin() + removeIDs[i]);
 		}
 	}
 }

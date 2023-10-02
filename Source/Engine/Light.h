@@ -16,6 +16,10 @@ public:
 
 	void Update(GLfloat deltaTime);
 
+	void SetColor(GLfloat x, GLfloat y, GLfloat z);
+
+	glm::vec3 GetColor();
+
 	~Light();
 
 protected:

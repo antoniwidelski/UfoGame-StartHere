@@ -34,16 +34,22 @@ public:
 
 	void SetShader(Shader* newShader);
 
+	void AttachObject(Object* object);
+
 	~Object();
 
-protected:
+	bool shouldRemove;
+	void Remove();
 
+protected:
+	bool canMove;
 	glm::vec3 position;
 	glm::vec3 rotation;
 	glm::vec3 scale;
 
 	Shader* shader;
 	
+	std::vector<Object*> attachedObjects;
 private:
 	
 };

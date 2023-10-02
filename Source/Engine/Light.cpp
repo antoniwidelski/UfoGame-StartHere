@@ -19,6 +19,16 @@ void Light::Update(GLfloat deltaTime)
 	Object::Update(deltaTime);
 }
 
+void Light::SetColor(GLfloat x, GLfloat y, GLfloat z)
+{
+	color = glm::vec3(x, y, z);
+}
+
+glm::vec3 Light::GetColor()
+{
+	return color;
+}
+
 Light::~Light()
 {
 }
