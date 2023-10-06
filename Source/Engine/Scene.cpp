@@ -65,8 +65,13 @@ void Scene::CreateScene()
 	mainLight->SetRotation(2.0f, -1.0f, -2.0f);
 	AddObject(mainLight);
 
-	PointLight* pLight = new PointLight(1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.3f, 0.2f, 0.1f);
-	pLight->SetPosition(0.0f, 1.0f, -7.0f);
+	PointLight* pLight1 = new PointLight(0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.3f, 0.2f, 0.1f);
+	pLight1->SetPosition(0.0f, 1.0f, -7.0f);
+	AddObject(pLight1);
+
+	PointLight* pLight2 = new PointLight(0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 0.3f, 0.2f, 0.1f);
+	pLight2->SetPosition(0.0f, 1.0f, 7.0f);
+	AddObject(pLight2);
 
 	SpotLight* sLight = new SpotLight(0.3f, 1.0f, 0.3f, 0.3f, 2.0f, 0.05f, 0.1f, 0.1f, 100.0);
 	sLight->SetPosition(0.0f, 1.0f, 0.0f);
@@ -74,11 +79,20 @@ void Scene::CreateScene()
 	player->AttachObject(sLight);
 	sLight->SetColor(1.0f, 0.0f, 0.0f);
 	AddObject(sLight);
+
+	SpotLight* sLight2 = new SpotLight(0.3f, 1.0f, 0.3f, 0.3f, 2.0f, 0.05f, 0.1f, 0.1f, 100.0);
+	sLight2->SetPosition(3.0f, 1.0f, 3.0f);
+	sLight2->SetRotation(0.0f, 1.0f, 0.0f);
+	sLight2->SetColor(1.0f, 1.0f, 1.0f);
+	AddObject(sLight2);
 }
 
 void Scene::Update(GLfloat deltaTime, bool* keys)
 {
 	std::vector<int> removeIDs;
+	int pLightsOnScene = 0;
+	int sLightsOnScene = 0;
+	
 	for (size_t i = 0; i < objectList.size(); i++)
 	{
 		if (objectList[i]->shouldRemove)
@@ -92,6 +106,22 @@ void Scene::Update(GLfloat deltaTime, bool* keys)
 				posPlayer->SetObjectsUnderPlayer(GetObjectsUnderObject(posPlayer, 3.0f));
 				posPlayer->Update(deltaTime, keys);
 			}
+			else if (SpotLight* posLight = dynamic_cast<SpotLight*>(objectList[i]))
+			{
+				if (sLightsOnScene < MAX_SPOT_LIGHTS)
+				{
+					posLight->Update(deltaTime, sLightsOnScene);
+					sLightsOnScene++;
+				}
+			}
+			else if (PointLight* posLight = dynamic_cast<PointLight*>(objectList[i]))
+			{
+				if (pLightsOnScene < MAX_POINT_LIGHTS)
+				{
+					posLight->Update(deltaTime, pLightsOnScene);
+					pLightsOnScene++;
+				}
+			}
 			else
 			{
 				objectList[i]->Update(deltaTime);
@@ -102,6 +132,8 @@ void Scene::Update(GLfloat deltaTime, bool* keys)
 			objectList.erase(objectList.begin() + removeIDs[i]);
 		}
 	}
+	glUniform1i(defaultShader->GetPointLightCountLocation(), pLightsOnScene);
+	glUniform1i(defaultShader->GetSpotLightCountLocation(), sLightsOnScene);
 }
 
 void Scene::RegisterModel(int* modelID, const std::string& fileName)

@@ -6,6 +6,8 @@
 #include <fstream>
 #include <vector>
 
+#include "CommonValues.h"
+
 #include <GL\glew.h>
 
 class Shader
@@ -24,8 +26,11 @@ public:
 	GLuint GetEyePositionLocation() { return uniformEyePosition; }
 
 	void GetDirectionalLightLocation(std::vector<GLfloat>& uniforms);
-	void GetPointLightLocation(std::vector<GLfloat>& uniforms);
-	void GetSpotLightLocation(std::vector<GLfloat>& uniforms);
+	void GetPointLightLocationByID(std::vector<GLfloat>& uniforms, int ID);
+	void GetSpotLightLocationByID(std::vector<GLfloat>& uniforms, int ID);
+
+	GLuint GetPointLightCountLocation() { return uniformPointLightCount; }
+	GLuint GetSpotLightCountLocation() { return uniformSpotLightCount; }
 
 	GLuint GetSpecularIntensityLocation();
 	GLuint GetShininessLocation();
@@ -50,16 +55,18 @@ private:
 
 	struct {
 		GLuint uniformAmbientIntensity;
-		GLuint uniformAmbientColor;
+		GLuint uniformColor;
 		GLuint uniformDiffuseIntensity;
 
 		GLuint uniformPosition;
 		GLuint uniformAttenuationVars;
-	} pointLight;
+	} uniformPointLights[MAX_POINT_LIGHTS];
+
+	GLuint uniformPointLightCount;
 
 	struct {
 		GLuint uniformAmbientIntensity;
-		GLuint uniformAmbientColor;
+		GLuint uniformColor;
 		GLuint uniformDiffuseIntensity;
 
 		GLuint uniformPosition;
@@ -67,7 +74,9 @@ private:
 
 		GLuint uniformDirection;
 		GLuint uniformEdge;
-	} spotLight;
+	} uniformSpotLights[MAX_SPOT_LIGHTS];
+
+	GLuint uniformSpotLightCount;
 
 	void CompileShader(const char* vertexCode, const char* fragmentCode);
 	void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType);

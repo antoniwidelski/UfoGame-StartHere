@@ -10,12 +10,12 @@ PointLight::PointLight(GLfloat red, GLfloat green, GLfloat blue, GLfloat aIntens
 	attenuationVars = glm::vec3(exp, lin, con);
 }
 
-void PointLight::Update(GLfloat deltaTime)
+void PointLight::Update(GLfloat deltaTime, int ID)
 {
 	Object::Update(deltaTime);
 
 	std::vector<GLfloat> uniforms;
-	shader->GetPointLightLocation(uniforms);
+	shader->GetPointLightLocationByID(uniforms, ID);
 
 	UseLight(uniforms[0], uniforms[1], uniforms[2], uniforms[3], uniforms[4]);
 }
@@ -23,6 +23,8 @@ void PointLight::Update(GLfloat deltaTime)
 void PointLight::UseLight(GLfloat ambientIntensityLocation, GLfloat ambientColorLocation,
 	GLfloat diffuseInstensityLocation, GLfloat positionLocation, GLfloat attenuationVarsLocation)
 {
+	
+
 	glUniform3f(ambientColorLocation, color.x, color.y, color.z);
 	glUniform1f(ambientIntensityLocation, ambientIntensity);
 	glUniform1f(diffuseInstensityLocation, diffuseIntensity);

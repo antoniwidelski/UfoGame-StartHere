@@ -16,12 +16,18 @@ SpotLight::SpotLight(GLfloat red, GLfloat green, GLfloat blue, GLfloat aIntensit
 	procEdge = cosf(glm::radians(edge));
 }
 
-void SpotLight::Update(GLfloat deltaTime)
+void SpotLight::Update(GLfloat deltaTime, int ID)
 {
 	Object::Update(deltaTime);
 
 	std::vector<GLfloat> uniforms;
-	shader->GetSpotLightLocation(uniforms);
+	shader->GetSpotLightLocationByID(uniforms, ID);
+
+	printf("%i\n", uniforms[0]);
+	printf("%i\n", uniforms[1]);
+	printf("%i\n", uniforms[2]);
+	printf("%i\n", uniforms[3]);
+	printf("%i\n", uniforms[4]);
 
 	UseLight(uniforms[0], uniforms[1], uniforms[2], uniforms[3], uniforms[4], uniforms[5], uniforms[6]);
 }
