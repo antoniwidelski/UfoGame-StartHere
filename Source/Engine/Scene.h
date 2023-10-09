@@ -19,7 +19,7 @@ public:
 	void Update(GLfloat deltaTime, bool* keys);
 	void BeginPlay();
 private:
-	
+
 
 	void RegisterModel(int* modelID, const std::string& fileName);
 	void AddObject(Object* object);

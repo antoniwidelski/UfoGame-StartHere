@@ -23,7 +23,7 @@ void Scene::CreateScene()
 	RegisterModel(&floorModelID, "Models/floor.obj");
 	RegisterModel(&frogModelID, "Models/12270_Frog_v1_L3.obj");
 	RegisterModel(&ufoModelID, "Models/UFO2.obj");
-	
+
 	Material* shinyMaterial = new Material(30.0f, 256.0f);
 
 	Actor* floor = new Actor();
@@ -92,7 +92,7 @@ void Scene::Update(GLfloat deltaTime, bool* keys)
 	std::vector<int> removeIDs;
 	int pLightsOnScene = 0;
 	int sLightsOnScene = 0;
-	
+
 	for (size_t i = 0; i < objectList.size(); i++)
 	{
 		if (objectList[i]->shouldRemove)
@@ -181,7 +181,7 @@ std::vector<Object*>* Scene::GetObjectsUnderObject(Object* highObject, GLfloat r
 		if (highObjectPosition.y > testObjectPosition.y)
 		{
 			GLfloat horizontalDistance = glm::sqrt(glm::pow(glm::abs(highObjectPosition.x - testObjectPosition.x), 2) + glm::pow(glm::abs(highObjectPosition.z - testObjectPosition.z), 2));
-			
+
 			if (horizontalDistance <= radius)
 			{
 				returnObjects->push_back(testObject);

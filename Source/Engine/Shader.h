@@ -46,8 +46,8 @@ private:
 		uniformSpecularIntensity, uniformShininess;
 
 	struct {
-		GLuint uniformAmbientIntensity; 
-		GLuint uniformAmbientColor; 
+		GLuint uniformAmbientIntensity;
+		GLuint uniformAmbientColor;
 		GLuint uniformDiffuseIntensity;
 
 		GLuint uniformDirection;

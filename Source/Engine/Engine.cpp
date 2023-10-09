@@ -8,16 +8,16 @@ Engine::Engine()
 	vShader = "Shaders/shader.vert";
 	fShader = "Shaders/shader.frag";
 
-	uniformProjection = 0; 
-	uniformModel = 0; 
+	uniformProjection = 0;
+	uniformModel = 0;
 	uniformView = 0;
 	uniformEyePosition = 0;
 }
 
 Engine* Engine::Get()
 {
-    static Engine sInstance;
-    return &sInstance;
+	static Engine sInstance;
+	return &sInstance;
 }
 
 void Engine::CreateShaders()
@@ -80,4 +80,3 @@ void Engine::Loop()
 
 	mainWindow.swapBuffers();
 }
-
