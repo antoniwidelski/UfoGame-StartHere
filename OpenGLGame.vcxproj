@@ -19,47 +19,47 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Engine\Actor.cpp" />
-    <ClCompile Include="Source\Engine\Camera.cpp" />
-    <ClCompile Include="Source\Engine\DirectionalLight.cpp" />
-    <ClCompile Include="Source\Engine\Engine.cpp" />
-    <ClCompile Include="Source\Engine\Frog.cpp" />
-    <ClCompile Include="Source\Engine\Light.cpp" />
-    <ClCompile Include="Source\Engine\main.cpp" />
-    <ClCompile Include="Source\Engine\Material.cpp" />
-    <ClCompile Include="Source\Engine\Mesh.cpp" />
-    <ClCompile Include="Source\Engine\Model.cpp" />
-    <ClCompile Include="Source\Engine\Object.cpp" />
-    <ClCompile Include="Source\Engine\Player.cpp" />
-    <ClCompile Include="Source\Engine\PointLight.cpp" />
-    <ClCompile Include="Source\Engine\Scene.cpp" />
-    <ClCompile Include="Source\Engine\Shader.cpp" />
-    <ClCompile Include="Source\Engine\Skybox.cpp" />
-    <ClCompile Include="Source\Engine\SpotLight.cpp" />
-    <ClCompile Include="Source\Engine\Texture.cpp" />
-    <ClCompile Include="Source\Engine\Window.cpp" />
+    <ClInclude Include="Source\Actor.h" />
+    <ClInclude Include="Source\Camera.h" />
+    <ClInclude Include="Source\CommonValues.h" />
+    <ClInclude Include="Source\DirectionalLight.h" />
+    <ClInclude Include="Source\Engine.h" />
+    <ClInclude Include="Source\Frog.h" />
+    <ClInclude Include="Source\Light.h" />
+    <ClInclude Include="Source\Material.h" />
+    <ClInclude Include="Source\Mesh.h" />
+    <ClInclude Include="Source\Model.h" />
+    <ClInclude Include="Source\Object.h" />
+    <ClInclude Include="Source\Player.h" />
+    <ClInclude Include="Source\PointLight.h" />
+    <ClInclude Include="Source\Scene.h" />
+    <ClInclude Include="Source\Shader.h" />
+    <ClInclude Include="Source\Skybox.h" />
+    <ClInclude Include="Source\SpotLight.h" />
+    <ClInclude Include="Source\stb_image.h" />
+    <ClInclude Include="Source\Texture.h" />
+    <ClInclude Include="Source\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Engine\Actor.h" />
-    <ClInclude Include="Source\Engine\Camera.h" />
-    <ClInclude Include="Source\Engine\CommonValues.h" />
-    <ClInclude Include="Source\Engine\DirectionalLight.h" />
-    <ClInclude Include="Source\Engine\Engine.h" />
-    <ClInclude Include="Source\Engine\Frog.h" />
-    <ClInclude Include="Source\Engine\Light.h" />
-    <ClInclude Include="Source\Engine\Material.h" />
-    <ClInclude Include="Source\Engine\Mesh.h" />
-    <ClInclude Include="Source\Engine\Model.h" />
-    <ClInclude Include="Source\Engine\Object.h" />
-    <ClInclude Include="Source\Engine\Player.h" />
-    <ClInclude Include="Source\Engine\PointLight.h" />
-    <ClInclude Include="Source\Engine\Scene.h" />
-    <ClInclude Include="Source\Engine\Shader.h" />
-    <ClInclude Include="Source\Engine\Skybox.h" />
-    <ClInclude Include="Source\Engine\SpotLight.h" />
-    <ClInclude Include="Source\Engine\stb_image.h" />
-    <ClInclude Include="Source\Engine\Texture.h" />
-    <ClInclude Include="Source\Engine\Window.h" />
+    <ClCompile Include="Source\Actor.cpp" />
+    <ClCompile Include="Source\Camera.cpp" />
+    <ClCompile Include="Source\DirectionalLight.cpp" />
+    <ClCompile Include="Source\Engine.cpp" />
+    <ClCompile Include="Source\Frog.cpp" />
+    <ClCompile Include="Source\Light.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Material.cpp" />
+    <ClCompile Include="Source\Mesh.cpp" />
+    <ClCompile Include="Source\Model.cpp" />
+    <ClCompile Include="Source\Object.cpp" />
+    <ClCompile Include="Source\Player.cpp" />
+    <ClCompile Include="Source\PointLight.cpp" />
+    <ClCompile Include="Source\Scene.cpp" />
+    <ClCompile Include="Source\Shader.cpp" />
+    <ClCompile Include="Source\Skybox.cpp" />
+    <ClCompile Include="Source\SpotLight.cpp" />
+    <ClCompile Include="Source\Texture.cpp" />
+    <ClCompile Include="Source\Window.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

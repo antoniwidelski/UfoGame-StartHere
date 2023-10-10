@@ -13,132 +13,126 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Engine">
-      <UniqueIdentifier>{fe845e2c-0200-4e85-bdc6-f81dd19ac61d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Game">
-      <UniqueIdentifier>{74f5cc8c-3b34-4515-bec1-dd1fd461be61}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Engine\Camera.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Engine.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\main.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Mesh.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Model.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Object.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Scene.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Shader.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Texture.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Window.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Actor.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Player.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Frog.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Light.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Material.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\DirectionalLight.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\PointLight.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\SpotLight.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Engine\Skybox.cpp">
-      <Filter>Source Files\Engine</Filter>
-    </ClCompile>
+    <ClInclude Include="Source\Actor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CommonValues.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DirectionalLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Frog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PointLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Skybox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SpotLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Engine\Camera.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\CommonValues.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Engine.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Mesh.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Model.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Object.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Scene.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Shader.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\stb_image.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Texture.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Window.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Actor.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Player.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Frog.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Light.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Material.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\DirectionalLight.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\PointLight.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\SpotLight.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Engine\Skybox.h">
-      <Filter>Source Files\Engine</Filter>
-    </ClInclude>
+    <ClCompile Include="Source\Actor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DirectionalLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Frog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PointLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Skybox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SpotLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
