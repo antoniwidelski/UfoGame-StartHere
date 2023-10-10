@@ -38,7 +38,7 @@ void Engine::Initialise()
 	mainWindow.Initialise();
 
 	CreateShaders();
-	scene = Scene(shaderList[0]);
+	scene = Scene(shaderList[0], skybox);
 	scene.CreateScene();
 	scene.BeginPlay();
 
@@ -60,6 +60,17 @@ void Engine::Loop()
 
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	skybox = scene.GetSkybox();
+	if (skybox)
+	{
+		
+		skybox->DrawSkybox(camera.calculateViewMatrix(), projection);
+	}
+	else
+	{
+		printf("pusty kurde");
+	}
 
 	shaderList[0]->UseShader();
 	uniformModel = shaderList[0]->GetModelLocation();

@@ -7,7 +7,8 @@
 #include "SpotLight.h"
 #include "Material.h"
 
-Scene::Scene(Shader* shader)
+
+Scene::Scene(Shader* shader, Skybox* skybox)
 {
 	defaultShader = shader;
 
@@ -85,6 +86,17 @@ void Scene::CreateScene()
 	sLight2->SetRotation(0.0f, 1.0f, 0.0f);
 	sLight2->SetColor(1.0f, 1.0f, 1.0f);
 	AddObject(sLight2);
+
+	std::vector<std::string> skyboxFaces;
+	skyboxFaces.push_back("Textures/Skybox3/night_ft.tga");
+	skyboxFaces.push_back("Textures/Skybox3/night_bk.tga");
+	skyboxFaces.push_back("Textures/Skybox3/night_up.tga");
+	skyboxFaces.push_back("Textures/Skybox3/night_dn.tga");
+	skyboxFaces.push_back("Textures/Skybox3/night_rt.tga");
+	skyboxFaces.push_back("Textures/Skybox3/night_lf.tga");
+
+	Skybox* skybox = new Skybox(skyboxFaces);
+	SetSkybox(skybox);
 }
 
 void Scene::Update(GLfloat deltaTime, bool* keys)
@@ -127,10 +139,10 @@ void Scene::Update(GLfloat deltaTime, bool* keys)
 				objectList[i]->Update(deltaTime);
 			}
 		}
-		for (size_t i = 0; i < removeIDs.size(); i++)
-		{
-			objectList.erase(objectList.begin() + removeIDs[i]);
-		}
+	}
+	for (size_t i = 0; i < removeIDs.size(); i++)
+	{
+		objectList.erase(objectList.begin() + removeIDs[i]);
 	}
 	glUniform1i(defaultShader->GetPointLightCountLocation(), pLightsOnScene);
 	glUniform1i(defaultShader->GetSpotLightCountLocation(), sLightsOnScene);
@@ -190,4 +202,9 @@ std::vector<Object*>* Scene::GetObjectsUnderObject(Object* highObject, GLfloat r
 	}
 
 	return returnObjects;
+}
+
+void Scene::SetSkybox(Skybox* newSkybox)
+{
+	currentSkybox = newSkybox;
 }

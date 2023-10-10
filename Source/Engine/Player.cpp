@@ -50,7 +50,6 @@ void Player::KeyControl(bool* keys, GLfloat deltaTime)
 		if (CheckForFrog())
 		{
 			isCapturing = true;
-			printf("zaba robi daba!");
 			canMove = false;
 		}
 	}

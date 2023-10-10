@@ -169,12 +169,6 @@ void Shader::GetSpotLightLocationByID(std::vector<GLfloat>& uniforms, int ID)
 	uniforms.push_back(uniformSpotLights[ID].uniformDirection);
 	uniforms.push_back(uniformSpotLights[ID].uniformAttenuationVars);
 	uniforms.push_back(uniformSpotLights[ID].uniformEdge);
-
-	printf("%i\n", uniforms[0]);
-	printf("%i\n", uniforms[1]);
-	printf("%i\n", uniforms[2]);
-	printf("%i\n", uniforms[3]);
-	printf("%i\n", uniforms[4]);
 }
 
 GLuint Shader::GetSpecularIntensityLocation()

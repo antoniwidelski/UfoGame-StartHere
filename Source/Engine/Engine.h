@@ -21,6 +21,7 @@
 #include "Scene.h"
 #include "Player.h"
 #include "Material.h"
+#include "Skybox.h"
 
 #include <assimp\Importer.hpp>
 
@@ -60,4 +61,5 @@ private:
 	Scene scene;
 
 	Player* player;
+	Skybox* skybox;
 };

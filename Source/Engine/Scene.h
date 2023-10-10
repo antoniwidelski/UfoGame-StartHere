@@ -7,14 +7,17 @@
 #include "Object.h"
 #include "Model.h"
 #include "Material.h"
+#include "Skybox.h"
 
 class Scene
 {
 public:
 	Scene() {}
-	Scene(Shader* shader);
+	Scene(Shader* shader, Skybox* skybox);
 
 	void CreateScene();
+
+	Skybox* GetSkybox() { return currentSkybox; }
 
 	void Update(GLfloat deltaTime, bool* keys);
 	void BeginPlay();
@@ -31,4 +34,8 @@ private:
 
 	std::vector<Model*> modelList;
 	std::vector<Object*> objectList;
+
+	Skybox* currentSkybox;
+	void SetSkybox(Skybox* newSkybox);
+	
 };
