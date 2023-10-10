@@ -1,5 +1,7 @@
 #include "Camera.h"
 
+#include <GLFW\glfw3.h>
+
 Camera::Camera() {}
 
 Camera::Camera(glm::vec3 startPosition, glm::vec3 startUp, GLfloat startYaw, GLfloat startPitch, GLfloat startMoveSpeed, GLfloat startTurnSpeed)

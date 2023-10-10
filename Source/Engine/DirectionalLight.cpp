@@ -1,5 +1,7 @@
 #include "DirectionalLight.h"
 
+#include "Shader.h"
+
 DirectionalLight::DirectionalLight() : Light()
 {
 	SetRotation(0.0f, 1.0f, 0.0f);

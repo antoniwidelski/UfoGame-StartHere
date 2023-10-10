@@ -1,5 +1,10 @@
 #include "Shader.h"
 
+
+
+#include <fstream>
+#include <iostream>
+
 Shader::Shader()
 {
 	shaderID = 0;

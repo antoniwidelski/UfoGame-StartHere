@@ -1,5 +1,7 @@
 #include "Window.h"
 
+#include <stdio.h>
+
 Window::Window()
 {
 	width = 800;

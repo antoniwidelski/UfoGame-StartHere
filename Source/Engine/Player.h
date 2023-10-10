@@ -1,10 +1,6 @@
 #pragma once
 
 #include "Actor.h"
-#include "Model.h"
-#include "Shader.h"
-#include "Frog.h"
-#include "SpotLight.h"
 
 #include <GLFW/glfw3.h>
 
@@ -14,7 +10,7 @@ class Player :
 public:
     Player();
 
-    virtual void Create(GLfloat movementSpeed, Model* newModel);
+    virtual void Create(GLfloat movementSpeed, class Model* newModel);
 
     void KeyControl(bool* keys, GLfloat deltaTime);
 
@@ -27,13 +23,13 @@ private:
 
     std::vector<Object*>* objectsUnder;
 
-    Frog* frogUnder;
-    Frog* CheckForFrog();
+    class Frog* frogUnder;
+    class Frog* CheckForFrog();
 
     bool isCapturing;
 
     GLfloat dTime;
 
-    SpotLight* ufoLight;
-    SpotLight* GetUfoLight();
+    class SpotLight* ufoLight;
+    class SpotLight* GetUfoLight();
 };

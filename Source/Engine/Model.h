@@ -7,9 +7,6 @@
 #include <assimp\scene.h>
 #include <assimp\postprocess.h>
 
-#include "Mesh.h"
-#include "Texture.h"
-
 class Model
 {
 public:
@@ -27,8 +24,8 @@ private:
 	void LoadMesh(aiMesh* mesh, const aiScene* scene);
 	void LoadMaterials(const aiScene* scene);
 
-	std::vector<Mesh*> meshList;
-	std::vector<Texture*> textureList;
+	std::vector<class Mesh*> meshList;
+	std::vector<class Texture*> textureList;
 	std::vector<unsigned int> meshToTex;
 };
 

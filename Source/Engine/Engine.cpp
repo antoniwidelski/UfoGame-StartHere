@@ -1,5 +1,9 @@
 #include "Engine.h"
 
+#include "Shader.h"
+#include "Player.h"
+#include "Skybox.h"
+
 Engine::Engine()
 {
 	deltaTime = 0.0f;

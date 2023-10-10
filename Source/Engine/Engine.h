@@ -11,17 +11,9 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "Mesh.h"
-#include "Shader.h"
 #include "Window.h"
-#include "Camera.h"
-#include "Texture.h"
-#include "Model.h"
-#include "Object.h"
 #include "Scene.h"
-#include "Player.h"
-#include "Material.h"
-#include "Skybox.h"
+#include "Camera.h"
 
 #include <assimp\Importer.hpp>
 
@@ -44,7 +36,7 @@ private:
 	void FindPlayer();
 
 	Window mainWindow;
-	std::vector<Shader*> shaderList;
+	std::vector<class Shader*> shaderList;
 	Camera camera;
 
 	GLfloat deltaTime;
@@ -60,6 +52,6 @@ private:
 
 	Scene scene;
 
-	Player* player;
-	Skybox* skybox;
+	class Player* player;
+	class Skybox* skybox;
 };

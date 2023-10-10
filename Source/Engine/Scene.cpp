@@ -1,12 +1,15 @@
 #include "Scene.h"
-#include "Actor.h"
+
 #include "Player.h"
 #include "Frog.h"
 #include "DirectionalLight.h"
-#include "PointLight.h"
 #include "SpotLight.h"
+#include "Skybox.h"
 #include "Material.h"
+#include "Model.h"
+#include "Shader.h"
 
+#include "CommonValues.h"
 
 Scene::Scene(Shader* shader, Skybox* skybox)
 {
@@ -66,26 +69,12 @@ void Scene::CreateScene()
 	mainLight->SetRotation(2.0f, -1.0f, -2.0f);
 	AddObject(mainLight);
 
-	PointLight* pLight1 = new PointLight(0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.3f, 0.2f, 0.1f);
-	pLight1->SetPosition(0.0f, 1.0f, -7.0f);
-	AddObject(pLight1);
-
-	PointLight* pLight2 = new PointLight(0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 0.3f, 0.2f, 0.1f);
-	pLight2->SetPosition(0.0f, 1.0f, 7.0f);
-	AddObject(pLight2);
-
 	SpotLight* sLight = new SpotLight(0.3f, 1.0f, 0.3f, 0.3f, 2.0f, 0.05f, 0.1f, 0.1f, 100.0);
 	sLight->SetPosition(0.0f, 1.0f, 0.0f);
 	sLight->SetRotation(0.0f, 1.0f, 0.0f);
 	player->AttachObject(sLight);
 	sLight->SetColor(1.0f, 0.0f, 0.0f);
 	AddObject(sLight);
-
-	SpotLight* sLight2 = new SpotLight(0.3f, 1.0f, 0.3f, 0.3f, 2.0f, 0.05f, 0.1f, 0.1f, 100.0);
-	sLight2->SetPosition(3.0f, 1.0f, 3.0f);
-	sLight2->SetRotation(0.0f, 1.0f, 0.0f);
-	sLight2->SetColor(1.0f, 1.0f, 1.0f);
-	AddObject(sLight2);
 
 	std::vector<std::string> skyboxFaces;
 	skyboxFaces.push_back("Textures/Skybox3/night_ft.tga");

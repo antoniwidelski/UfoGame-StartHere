@@ -1,5 +1,7 @@
 #include "PointLight.h"
 
+#include "Shader.h"
+
 PointLight::PointLight() : Light()
 {
 	attenuationVars = glm::vec3(0.0f, 0.0f, 0.0f);
@@ -23,8 +25,6 @@ void PointLight::Update(GLfloat deltaTime, int ID)
 void PointLight::UseLight(GLfloat ambientIntensityLocation, GLfloat ambientColorLocation,
 	GLfloat diffuseInstensityLocation, GLfloat positionLocation, GLfloat attenuationVarsLocation)
 {
-	
-
 	glUniform3f(ambientColorLocation, color.x, color.y, color.z);
 	glUniform1f(ambientIntensityLocation, ambientIntensity);
 	glUniform1f(diffuseInstensityLocation, diffuseIntensity);

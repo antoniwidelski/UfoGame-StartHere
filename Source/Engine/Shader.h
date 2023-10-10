@@ -1,14 +1,11 @@
 #pragma once
 
-#include <stdio.h>
 #include <string>
-#include <iostream>
-#include <fstream>
 #include <vector>
 
-#include "CommonValues.h"
-
 #include <GL\glew.h>
+
+#include "CommonValues.h"
 
 class Shader
 {

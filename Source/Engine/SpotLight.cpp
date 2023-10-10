@@ -1,8 +1,8 @@
 #include "SpotLight.h"
+
 #include <string>
 
-#include <time.h>
-#include <cstdlib>
+#include "Shader.h"
 
 SpotLight::SpotLight() : PointLight()
 {

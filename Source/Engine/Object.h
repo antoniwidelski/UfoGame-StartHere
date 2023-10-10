@@ -3,14 +3,9 @@
 #include <string>
 #include <vector>
 
-#include <glm/vec3.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
+#include "GL/glew.h"
 
-#include "Model.h"
-#include "Shader.h"
-#include "Mesh.h"
-#include "Texture.h"
+#include <glm/vec3.hpp>
 
 class Object
 {
@@ -30,7 +25,7 @@ public:
 
 	virtual void Update(GLfloat deltaTime);
 
-	void SetShader(Shader* newShader);
+	void SetShader(class Shader* newShader);
 
 	void AttachObject(Object* object);
 
@@ -45,10 +40,8 @@ protected:
 	glm::vec3 rotation;
 	glm::vec3 scale;
 
-	Shader* shader;
+	class Shader* shader;
 	
 	std::vector<Object*> attachedObjects;
-private:
-	
 };
 

@@ -1,4 +1,5 @@
 #pragma once
+
 #include <GL\glew.h>
 
 class Material
@@ -14,8 +15,5 @@ public:
 private:
 	GLfloat specularIntensity;
 	GLfloat shininess;
-
-
-	
 };
 
