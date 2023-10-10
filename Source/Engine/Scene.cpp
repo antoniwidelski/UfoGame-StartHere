@@ -8,14 +8,17 @@
 #include "Material.h"
 #include "Model.h"
 #include "Shader.h"
+#include "Camera.h"
 
 #include "CommonValues.h"
 
-Scene::Scene(Shader* shader, Skybox* skybox)
+Scene::Scene(Shader* shader, Skybox* skybox, Camera* camera)
 {
 	defaultShader = shader;
 
 	defaultMaterial = new Material(0.3f, 4.0f);
+
+	currentCamera = camera;
 }
 
 void Scene::CreateScene()
@@ -86,6 +89,9 @@ void Scene::CreateScene()
 
 	Skybox* skybox = new Skybox(skyboxFaces);
 	SetSkybox(skybox);
+
+	currentCamera->SetRotation(-40.0f, -90.0f, 0.0f);
+	currentCamera->SetPosition(0.0f, 30.0f, 40.0f);
 }
 
 void Scene::Update(GLfloat deltaTime, bool* keys)

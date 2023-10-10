@@ -12,9 +12,9 @@ public:
 
 	void Update(GLfloat deltaTime, int ID);
 
-	void UseLight(GLfloat ambientIntensityLocation, GLfloat ambientColorLocation, GLfloat diffuseInstensityLocation,
-		GLfloat positionLocation, GLfloat directionLocation, GLfloat attenuationVarsLocation,
-		GLfloat edgeLocation);
+	void UseLight(GLuint ambientIntensityLocation, GLuint ambientColorLocation, GLuint diffuseInstensityLocation,
+		GLuint positionLocation, GLuint directionLocation, GLuint attenuationVarsLocation,
+		GLuint edgeLocation);
 
 	~SpotLight();
 

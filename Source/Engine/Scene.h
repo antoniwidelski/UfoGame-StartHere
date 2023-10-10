@@ -9,11 +9,12 @@ class Scene
 {
 public:
 	Scene() {}
-	Scene(class Shader* shader, class Skybox* skybox);
+	Scene(class Shader* shader, class Skybox* skybox, class Camera* camera);
 
 	void CreateScene();
 
 	Skybox* GetSkybox() { return currentSkybox; }
+	Camera* GetCamera() { return currentCamera; }
 
 	void Update(GLfloat deltaTime, bool* keys);
 	void BeginPlay();
@@ -30,6 +31,9 @@ private:
 
 	std::vector<class Model*> modelList;
 	std::vector<class Object*> objectList;
+
+	class Camera* currentCamera;
+	void SetCamera(class Camera* newCamera);
 
 	class Skybox* currentSkybox;
 	void SetSkybox(class Skybox* newSkybox);

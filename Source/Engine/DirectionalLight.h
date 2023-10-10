@@ -11,11 +11,9 @@ public:
 
 	void Update(GLfloat deltaTime);
 
-	void UseLight(GLfloat ambientIntensityLocation, GLfloat ambientColorLocation,
-		GLfloat diffuseInstensityLocation, GLfloat directionLocation);
+	void UseLight(GLuint ambientIntensityLocation, GLuint ambientColorLocation,
+		GLuint diffuseInstensityLocation, GLuint directionLocation);
 
 	~DirectionalLight();
 
-protected:
-	glm::vec3 direction;
 };

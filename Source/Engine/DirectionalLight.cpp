@@ -16,14 +16,14 @@ void DirectionalLight::Update(GLfloat deltaTime)
 {
 	Object::Update(deltaTime);
 
-	std::vector<GLfloat> uniforms;
+	std::vector<GLuint> uniforms;
 	shader->GetDirectionalLightLocation(uniforms);
 
 	UseLight(uniforms[0], uniforms[1], uniforms[2], uniforms[3]);
 }
 
-void DirectionalLight::UseLight(GLfloat ambientIntensityLocation, GLfloat ambientColorLocation,
-	GLfloat diffuseInstensityLocation, GLfloat directionLocation)
+void DirectionalLight::UseLight(GLuint ambientIntensityLocation, GLuint ambientColorLocation,
+	GLuint diffuseInstensityLocation, GLuint directionLocation)
 {
 	glUniform3f(ambientColorLocation, color.x, color.y, color.z);
 	glUniform1f(ambientIntensityLocation, ambientIntensity);

@@ -3,6 +3,7 @@
 #include "Shader.h"
 #include "Player.h"
 #include "Skybox.h"
+#include "Camera.h"
 
 Engine::Engine()
 {
@@ -42,11 +43,11 @@ void Engine::Initialise()
 	mainWindow.Initialise();
 
 	CreateShaders();
-	scene = Scene(shaderList[0], skybox);
+	camera = new Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), 0.0f, 0.0f, 5.0f, 0.5f);
+
+	scene = Scene(shaderList[0], skybox, camera);
 	scene.CreateScene();
 	scene.BeginPlay();
-
-	camera = Camera(glm::vec3(0.0f, 30.0f, 40.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, -39.0f, 5.0f, 0.5f);
 
 	projection = glm::perspective(45.0f, mainWindow.getBufferWidth() / mainWindow.getBufferHeight(), 0.1f, 1000.0f);
 }
@@ -59,8 +60,10 @@ void Engine::Loop()
 
 	glfwPollEvents();
 
-	camera.keyControl(mainWindow.getKeys(), deltaTime);
-	camera.mouseControl(mainWindow.getXChange(), mainWindow.getYChange());
+	camera = scene.GetCamera();
+
+	camera->keyControl(mainWindow.getKeys(), deltaTime);
+	camera->mouseControl(mainWindow.getXChange(), mainWindow.getYChange());
 
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -69,11 +72,7 @@ void Engine::Loop()
 	if (skybox)
 	{
 		
-		skybox->DrawSkybox(camera.calculateViewMatrix(), projection);
-	}
-	else
-	{
-		printf("pusty kurde");
+		skybox->DrawSkybox(camera->calculateViewMatrix(), projection);
 	}
 
 	shaderList[0]->UseShader();
@@ -83,8 +82,8 @@ void Engine::Loop()
 	uniformEyePosition = shaderList[0]->GetEyePositionLocation();
 
 	glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
-	glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
-	glUniform3f(uniformEyePosition, camera.getCameraPosition().x, camera.getCameraPosition().y, camera.getCameraPosition().z);
+	glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera->calculateViewMatrix()));
+	glUniform3f(uniformEyePosition, camera->getCameraPosition().x, camera->getCameraPosition().y, camera->getCameraPosition().z);
 
 	glm::mat4 model(1.0f);
 	glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));

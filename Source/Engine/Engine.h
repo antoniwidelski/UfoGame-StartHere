@@ -13,7 +13,7 @@
 
 #include "Window.h"
 #include "Scene.h"
-#include "Camera.h"
+
 
 #include <assimp\Importer.hpp>
 
@@ -37,7 +37,7 @@ private:
 
 	Window mainWindow;
 	std::vector<class Shader*> shaderList;
-	Camera camera;
+	class Camera* camera;
 
 	GLfloat deltaTime;
 	GLfloat lastTime;

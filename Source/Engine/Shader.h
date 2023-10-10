@@ -22,9 +22,9 @@ public:
 	GLuint GetViewLocation() { return uniformView; }
 	GLuint GetEyePositionLocation() { return uniformEyePosition; }
 
-	void GetDirectionalLightLocation(std::vector<GLfloat>& uniforms);
-	void GetPointLightLocationByID(std::vector<GLfloat>& uniforms, int ID);
-	void GetSpotLightLocationByID(std::vector<GLfloat>& uniforms, int ID);
+	void GetDirectionalLightLocation(std::vector<GLuint>& uniforms);
+	void GetPointLightLocationByID(std::vector<GLuint>& uniforms, int ID);
+	void GetSpotLightLocationByID(std::vector<GLuint>& uniforms, int ID);
 
 	GLuint GetPointLightCountLocation() { return uniformPointLightCount; }
 	GLuint GetSpotLightCountLocation() { return uniformSpotLightCount; }

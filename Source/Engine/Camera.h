@@ -1,11 +1,13 @@
 #pragma once
 
+#include "Object.h"
+
 #include <GL\glew.h>
 
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>
 
-class Camera
+class Camera : public Object
 {
 public:
 	Camera();
@@ -21,7 +23,6 @@ public:
 	~Camera();
 
 private:
-	glm::vec3 position;
 	glm::vec3 front;
 	glm::vec3 up;
 	glm::vec3 right;

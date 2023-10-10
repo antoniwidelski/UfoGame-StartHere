@@ -48,8 +48,8 @@ void Camera::mouseControl(GLfloat xChange, GLfloat yChange)
 	xChange *= turnSpeed;
 	yChange *= turnSpeed;
 
-	yaw += xChange;
-	pitch += yChange;
+	rotation.y += xChange;
+	rotation.x += yChange;
 
 	if (pitch > 90.0f)
 	{
@@ -71,6 +71,9 @@ glm::mat4 Camera::calculateViewMatrix()
 
 void Camera::update()
 {
+	yaw = rotation.y;
+	pitch = rotation.x;
+
 	front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
 	front.y = sin(glm::radians(pitch));
 	front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));

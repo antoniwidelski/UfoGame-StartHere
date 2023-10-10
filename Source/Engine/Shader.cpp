@@ -148,7 +148,7 @@ void Shader::CompileShader(const char* vertexCode, const char* fragmentCode)
 	uniformSpotLightCount = glGetUniformLocation(shaderID, "spotLightCount");
 }
 
-void Shader::GetDirectionalLightLocation(std::vector<GLfloat>& uniforms)
+void Shader::GetDirectionalLightLocation(std::vector<GLuint>& uniforms)
 {
 	uniforms.push_back(directionalLight.uniformAmbientIntensity);
 	uniforms.push_back(directionalLight.uniformAmbientColor);
@@ -156,7 +156,7 @@ void Shader::GetDirectionalLightLocation(std::vector<GLfloat>& uniforms)
 	uniforms.push_back(directionalLight.uniformDirection);
 }
 
-void Shader::GetPointLightLocationByID(std::vector<GLfloat>& uniforms, int ID)
+void Shader::GetPointLightLocationByID(std::vector<GLuint>& uniforms, int ID)
 {
 	uniforms.push_back(uniformPointLights[ID].uniformAmbientIntensity);
 	uniforms.push_back(uniformPointLights[ID].uniformColor);
@@ -165,7 +165,7 @@ void Shader::GetPointLightLocationByID(std::vector<GLfloat>& uniforms, int ID)
 	uniforms.push_back(uniformPointLights[ID].uniformAttenuationVars);
 }
 
-void Shader::GetSpotLightLocationByID(std::vector<GLfloat>& uniforms, int ID)
+void Shader::GetSpotLightLocationByID(std::vector<GLuint>& uniforms, int ID)
 {
 	uniforms.push_back(uniformSpotLights[ID].uniformAmbientIntensity);
 	uniforms.push_back(uniformSpotLights[ID].uniformColor);
