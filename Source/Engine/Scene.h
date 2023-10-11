@@ -5,7 +5,7 @@
 
 #include <gl/glew.h>
 
-/*Using Scene dev can create actual palce where Objects can be placed*/
+/*Scene creates actual palce where Objects can be placed*/
 
 class Scene
 {
