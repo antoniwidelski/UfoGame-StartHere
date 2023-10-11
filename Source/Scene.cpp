@@ -27,9 +27,9 @@ void Scene::CreateScene()
 	int frogModelID;
 	int ufoModelID;
 
-	RegisterModel(&floorModelID, "Models/untitled.obj");
+	RegisterModel(&floorModelID, "Models/Floor.obj");
 	RegisterModel(&frogModelID, "Models/12270_Frog_v1_L3.obj");
-	RegisterModel(&ufoModelID, "Models/UFO2.obj");
+	RegisterModel(&ufoModelID, "Models/Low_poly_UFO.obj");
 
 	Material* shinyMaterial = new Material(30.0f, 256.0f);
 
@@ -41,6 +41,7 @@ void Scene::CreateScene()
 	Player* player = new Player();
 	player->Create(5.0f, modelList[ufoModelID]);
 	player->SetMaterial(shinyMaterial);
+	player->Scale(0.13f, 0.13f, 0.13f);
 	player->Move(0.0f, 7.0f, 0.0f);
 	AddObject(player);
 
@@ -80,12 +81,12 @@ void Scene::CreateScene()
 	AddObject(sLight);
 
 	std::vector<std::string> skyboxFaces;
-	skyboxFaces.push_back("Textures/Skybox3/night_ft.tga");
-	skyboxFaces.push_back("Textures/Skybox3/night_bk.tga");
-	skyboxFaces.push_back("Textures/Skybox3/night_up.tga");
-	skyboxFaces.push_back("Textures/Skybox3/night_dn.tga");
-	skyboxFaces.push_back("Textures/Skybox3/night_rt.tga");
-	skyboxFaces.push_back("Textures/Skybox3/night_lf.tga");
+	skyboxFaces.push_back("Textures/Skybox/night_ft.tga");
+	skyboxFaces.push_back("Textures/Skybox/night_bk.tga");
+	skyboxFaces.push_back("Textures/Skybox/night_up.tga");
+	skyboxFaces.push_back("Textures/Skybox/night_dn.tga");
+	skyboxFaces.push_back("Textures/Skybox/night_rt.tga");
+	skyboxFaces.push_back("Textures/Skybox/night_lf.tga");
 
 	Skybox* skybox = new Skybox(skyboxFaces);
 	SetSkybox(skybox);
