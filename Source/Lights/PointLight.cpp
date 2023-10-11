@@ -1,6 +1,6 @@
 #include "PointLight.h"
 
-#include "Shader.h"
+#include "../Engine/Shader.h"
 
 PointLight::PointLight() : Light()
 {

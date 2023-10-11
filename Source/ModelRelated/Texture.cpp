@@ -1,6 +1,6 @@
 #include "Texture.h"
 
-#include "CommonValues.h"
+#include "../CommonValues.h"
 
 Texture::Texture()
 {

@@ -1,11 +1,10 @@
 #include "Actor.h"
 
-#include "Object.h"
-#include "Material.h"
-#include "Shader.h"
-#include "Model.h"
+#include "../ModelRelated/Material.h"
+#include "../Engine/Shader.h"
+#include "../ModelRelated/Model.h"
 
-#include "CommonValues.h"
+#include "../CommonValues.h"
 
 Actor::Actor() : Object()
 {

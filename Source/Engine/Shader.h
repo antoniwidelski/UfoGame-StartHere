@@ -5,7 +5,7 @@
 
 #include <GL\glew.h>
 
-#include "CommonValues.h"
+#include "../CommonValues.h"
 
 class Shader
 {

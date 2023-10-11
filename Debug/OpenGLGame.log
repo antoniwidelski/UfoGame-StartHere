@@ -1,3 +1,2 @@
-﻿  Scene.cpp
-D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Scene.cpp(194,31): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+﻿  SpotLight.cpp
   OpenGLGame.vcxproj -> D:\OpenGL\Projects\OpenGLGame\Debug\OpenGLGame.exe

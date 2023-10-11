@@ -1,8 +1,8 @@
 #include "Player.h"
 
 #include "Frog.h"
-#include "SpotLight.h"
-#include "Model.h"
+#include "../Lights/SpotLight.h"
+#include "../ModelRelated/Model.h"
 
 Player::Player() : Actor()
 {

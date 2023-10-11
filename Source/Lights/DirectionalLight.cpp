@@ -1,6 +1,6 @@
 #include "DirectionalLight.h"
 
-#include "Shader.h"
+#include "../Engine/Shader.h"
 
 DirectionalLight::DirectionalLight() : Light()
 {

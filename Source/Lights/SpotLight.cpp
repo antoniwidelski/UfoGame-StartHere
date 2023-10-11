@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "Shader.h"
+#include "../Engine/Shader.h"
 
 SpotLight::SpotLight() : PointLight()
 {

@@ -19,47 +19,47 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Actor.h" />
-    <ClInclude Include="Source\Camera.h" />
-    <ClInclude Include="Source\CommonValues.h" />
-    <ClInclude Include="Source\DirectionalLight.h" />
-    <ClInclude Include="Source\Engine.h" />
-    <ClInclude Include="Source\Frog.h" />
-    <ClInclude Include="Source\Light.h" />
-    <ClInclude Include="Source\Material.h" />
-    <ClInclude Include="Source\Mesh.h" />
-    <ClInclude Include="Source\Model.h" />
-    <ClInclude Include="Source\Object.h" />
-    <ClInclude Include="Source\Player.h" />
-    <ClInclude Include="Source\PointLight.h" />
-    <ClInclude Include="Source\Scene.h" />
-    <ClInclude Include="Source\Shader.h" />
-    <ClInclude Include="Source\Skybox.h" />
-    <ClInclude Include="Source\SpotLight.h" />
-    <ClInclude Include="Source\stb_image.h" />
-    <ClInclude Include="Source\Texture.h" />
-    <ClInclude Include="Source\Window.h" />
+    <ClCompile Include="Source\Actors\Actor.cpp" />
+    <ClCompile Include="Source\Actors\Frog.cpp" />
+    <ClCompile Include="Source\Actors\Player.cpp" />
+    <ClCompile Include="Source\Engine\Camera.cpp" />
+    <ClCompile Include="Source\Engine\Engine.cpp" />
+    <ClCompile Include="Source\Engine\Object.cpp" />
+    <ClCompile Include="Source\Engine\Scene.cpp" />
+    <ClCompile Include="Source\Engine\Shader.cpp" />
+    <ClCompile Include="Source\Engine\Window.cpp" />
+    <ClCompile Include="Source\Lights\DirectionalLight.cpp" />
+    <ClCompile Include="Source\Lights\Light.cpp" />
+    <ClCompile Include="Source\Lights\PointLight.cpp" />
+    <ClCompile Include="Source\Lights\SpotLight.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\ModelRelated\Material.cpp" />
+    <ClCompile Include="Source\ModelRelated\Mesh.cpp" />
+    <ClCompile Include="Source\ModelRelated\Model.cpp" />
+    <ClCompile Include="Source\ModelRelated\Skybox.cpp" />
+    <ClCompile Include="Source\ModelRelated\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Actor.cpp" />
-    <ClCompile Include="Source\Camera.cpp" />
-    <ClCompile Include="Source\DirectionalLight.cpp" />
-    <ClCompile Include="Source\Engine.cpp" />
-    <ClCompile Include="Source\Frog.cpp" />
-    <ClCompile Include="Source\Light.cpp" />
-    <ClCompile Include="Source\main.cpp" />
-    <ClCompile Include="Source\Material.cpp" />
-    <ClCompile Include="Source\Mesh.cpp" />
-    <ClCompile Include="Source\Model.cpp" />
-    <ClCompile Include="Source\Object.cpp" />
-    <ClCompile Include="Source\Player.cpp" />
-    <ClCompile Include="Source\PointLight.cpp" />
-    <ClCompile Include="Source\Scene.cpp" />
-    <ClCompile Include="Source\Shader.cpp" />
-    <ClCompile Include="Source\Skybox.cpp" />
-    <ClCompile Include="Source\SpotLight.cpp" />
-    <ClCompile Include="Source\Texture.cpp" />
-    <ClCompile Include="Source\Window.cpp" />
+    <ClInclude Include="Source\Actors\Actor.h" />
+    <ClInclude Include="Source\Actors\Frog.h" />
+    <ClInclude Include="Source\Actors\Player.h" />
+    <ClInclude Include="Source\CommonValues.h" />
+    <ClInclude Include="Source\Engine\Camera.h" />
+    <ClInclude Include="Source\Engine\Engine.h" />
+    <ClInclude Include="Source\Engine\Object.h" />
+    <ClInclude Include="Source\Engine\Scene.h" />
+    <ClInclude Include="Source\Engine\Shader.h" />
+    <ClInclude Include="Source\Engine\Window.h" />
+    <ClInclude Include="Source\Lights\DirectionalLight.h" />
+    <ClInclude Include="Source\Lights\Light.h" />
+    <ClInclude Include="Source\Lights\PointLight.h" />
+    <ClInclude Include="Source\Lights\SpotLight.h" />
+    <ClInclude Include="Source\ModelRelated\Material.h" />
+    <ClInclude Include="Source\ModelRelated\Mesh.h" />
+    <ClInclude Include="Source\ModelRelated\Model.h" />
+    <ClInclude Include="Source\ModelRelated\Skybox.h" />
+    <ClInclude Include="Source\ModelRelated\Texture.h" />
+    <ClInclude Include="Source\stb_image.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

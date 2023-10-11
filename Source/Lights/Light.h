@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Object.h"
+#include "../Engine/Object.h"
 
 #include <GL/glew.h>
 #include <glm/glm.hpp>

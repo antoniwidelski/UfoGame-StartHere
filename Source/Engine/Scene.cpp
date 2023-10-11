@@ -1,16 +1,16 @@
 #include "Scene.h"
 
-#include "Player.h"
-#include "Frog.h"
-#include "DirectionalLight.h"
-#include "SpotLight.h"
-#include "Skybox.h"
-#include "Material.h"
-#include "Model.h"
-#include "Shader.h"
-#include "Camera.h"
+#include "../Actors/Player.h"
+#include "../Actors/Frog.h"
+#include "../Lights/DirectionalLight.h"
+#include "../Lights/SpotLight.h"
+#include "../ModelRelated/Skybox.h"
+#include "../ModelRelated/Material.h"
+#include "../ModelRelated/Model.h"
+#include "../Engine/Shader.h"
+#include "../Engine/Camera.h"
 
-#include "CommonValues.h"
+#include "../CommonValues.h"
 
 Scene::Scene(Shader* shader, Skybox* skybox, Camera* camera)
 {
