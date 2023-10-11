@@ -27,7 +27,7 @@ void Scene::CreateScene()
 	int frogModelID;
 	int ufoModelID;
 
-	RegisterModel(&floorModelID, "Models/floor.obj");
+	RegisterModel(&floorModelID, "Models/untitled.obj");
 	RegisterModel(&frogModelID, "Models/12270_Frog_v1_L3.obj");
 	RegisterModel(&ufoModelID, "Models/UFO2.obj");
 
@@ -139,6 +139,7 @@ void Scene::Update(GLfloat deltaTime, const bool* keys)
 	for (size_t i = 0; i < removeIDs.size(); i++)
 	{
 		delete objectList[removeIDs[i]];
+		objectList[removeIDs[i]] = nullptr;
 		objectList.erase(objectList.begin() + removeIDs[i]);
 	}
 	glUniform1i(defaultShader->GetPointLightCountLocation(), pLightsOnScene);
@@ -204,4 +205,18 @@ std::vector<Object*>* Scene::GetObjectsUnderObject(Object* highObject, const GLf
 void Scene::SetSkybox(Skybox* newSkybox)
 {
 	currentSkybox = newSkybox;
+}
+
+Scene::~Scene()
+{
+	for (size_t i = 0; i < objectList.size(); i++)
+	{
+		delete objectList[i];
+		objectList[i] = nullptr;
+	}
+	for (size_t i = 0; i < modelList.size(); i++)
+	{
+		delete modelList[i];
+		modelList[i] = nullptr;
+	}
 }

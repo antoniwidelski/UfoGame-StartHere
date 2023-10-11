@@ -4,6 +4,8 @@
 
 #include <GLFW/glfw3.h>
 
+/*Player is an Actor that can be controlled by user.*/
+
 class Player :
     public Actor
 {

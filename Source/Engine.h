@@ -14,10 +14,11 @@
 #include "Window.h"
 #include "Scene.h"
 
-
 #include <assimp\Importer.hpp>
 
 #include "CommonValues.h"
+
+/*Engine is responsible for things like creating window, base shaders, camera, scene etc.*/
 
 class Engine
 {
@@ -51,6 +52,5 @@ private:
 
 	Scene scene;
 
-	class Player* player;
 	class Skybox* skybox;
 };

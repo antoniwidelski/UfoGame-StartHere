@@ -6,6 +6,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+/*Actor is an Object that has Model*/
+
 class Actor : public Object
 {
 public:

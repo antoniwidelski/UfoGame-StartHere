@@ -107,4 +107,6 @@ void Skybox::DrawSkybox(glm::mat4 viewMatrix, glm::mat4 projectionMatrix)
 
 Skybox::~Skybox()
 {
+	delete skyShader;
+	skyShader = nullptr;
 }

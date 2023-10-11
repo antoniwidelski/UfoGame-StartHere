@@ -7,6 +7,8 @@
 
 #include <glm/vec3.hpp>
 
+/*Object is base unit to be placed on scene*/
+
 class Object
 {
 public:

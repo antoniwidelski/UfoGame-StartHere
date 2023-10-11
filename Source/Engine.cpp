@@ -1,7 +1,6 @@
 #include "Engine.h"
 
 #include "Shader.h"
-#include "Player.h"
 #include "Skybox.h"
 #include "Camera.h"
 
@@ -71,7 +70,6 @@ void Engine::Loop()
 	skybox = scene.GetSkybox();
 	if (skybox)
 	{
-		
 		skybox->DrawSkybox(camera->CalculateViewMatrix(), projection);
 	}
 
