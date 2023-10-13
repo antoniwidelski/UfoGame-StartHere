@@ -16,7 +16,7 @@
 
 #include <assimp\Importer.hpp>
 
-#include "CommonValues.h"
+#include "../CommonValues.h"
 
 /*Engine is responsible for things like creating window, base shaders, camera, scene etc.*/
 

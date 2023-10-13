@@ -1,7 +1,7 @@
 #include "Engine.h"
 
 #include "Shader.h"
-#include "Skybox.h"
+#include "../ModelRelated/Skybox.h"
 #include "Camera.h"
 
 Engine::Engine()

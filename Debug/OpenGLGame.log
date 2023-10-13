@@ -1,2 +1,7 @@
-﻿  SpotLight.cpp
+﻿  Frog.cpp
+  Player.cpp
+  Scene.cpp
+D:\OpenGL\Projects\OpenGLGame\OpenGLGame\Source\Engine\Scene.cpp(194,31): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+  Skybox.cpp
+  Generating Code...
   OpenGLGame.vcxproj -> D:\OpenGL\Projects\OpenGLGame\Debug\OpenGLGame.exe

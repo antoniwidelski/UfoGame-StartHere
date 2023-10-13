@@ -7,12 +7,12 @@ UFOGame is project that showcases my "Low Level" game programming skills like: O
 * Object-oriented structre which allows easy creation of new game objects.
 * Importing Models in OBJ format.
 * Directional/Point/Spot Lights.
-* Skybox
-* Gameplay
+* Skybox.
+* Gameplay.
 
 ***Plans for future:***
 * Shadows.
 * Collision.
 
-Gameplay Video: 
-Lightning Demo:
+Gameplay Video: https://youtu.be/ocypsdRK4Mc
+Lighting Demo: https://youtu.be/NNSrFr5Cv_c

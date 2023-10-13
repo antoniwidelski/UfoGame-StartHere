@@ -1,12 +1,12 @@
 #include "Skybox.h"
 
 #include "Mesh.h"
-#include "Shader.h"
+#include "../Engine/Shader.h"
 
 #include <glm\gtc\matrix_transform.hpp>
 #include <glm\gtc\type_ptr.hpp>
 
-#include "CommonValues.h"
+#include "../CommonValues.h"
 
 Skybox::Skybox()
 {
