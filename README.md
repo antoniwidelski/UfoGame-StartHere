@@ -10,10 +10,6 @@ UFOGame is project that showcases my "Low Level" game programming skills like: O
 * Skybox.
 * Gameplay.
 
-***Plans for future:***
-* Shadows.
-* Collision.
-
 Gameplay Video: https://youtu.be/ocypsdRK4Mc
 
 Lighting Demo: https://youtu.be/NNSrFr5Cv_c
